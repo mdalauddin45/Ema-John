@@ -1,0 +1,37 @@
+
+.shop-card{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 300px;
+    height: 510px; 
+    margin: 20px;
+    position: relative;
+   
+}
+.shop-card img{
+    width: 286px;
+    height: 286px;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+.product-info{
+    margin-left: 10px;
+    font-family: 'lato';
+    padding: 0px;
+}
+.btn{
+    border: none;
+    background-color: #FFE0B3;
+    color: black;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+}
+.btn:hover{
+    background-color: orange;
+}

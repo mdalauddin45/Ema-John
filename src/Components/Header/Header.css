@@ -1,0 +1,16 @@
+.header {
+ background-color:#1C2B35 ;
+padding: 30px;
+display: flex;
+justify-content: space-between;
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin: 30px;
+}
+.menu a:hover{
+    color: orange;
+}
