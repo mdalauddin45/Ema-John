@@ -1,0 +1,25 @@
+.cart{
+    position: sticky;
+    top: 20px;
+}
+.clr-btn{
+    background-color: #FF3030;
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.review-btn{
+    background-color: #FF9900;
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}

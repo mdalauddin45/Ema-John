@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 const Shop = () => {
@@ -11,10 +12,37 @@ const Shop = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  // Order Summary Section
   const handleAddToCart = (product) => {
+    // console.log(product);
     const newCart = [...cart, product];
     setCart(newCart);
+
+    // save to LocalStorage
+    let shoppingCart = {};
+
+    // get the shopping cart
+    const storedCart = localStorage.getItem("Shopping-cart");
+    if (storedCart) {
+      shoppingCart = JSON.parse(storedCart);
+    }
+    // quantity
+    const quantity = shoppingCart[product.id];
+    if (quantity) {
+      const newQuantity = quantity + 1;
+      shoppingCart[product.id] = newQuantity;
+    } else {
+      shoppingCart[product.id] = 1;
+    }
+    // set the shopping cart
+    localStorage.setItem("Shopping-cart", JSON.stringify(shoppingCart));
   };
+  const handleRemoveFromCart = () => {
+    setCart([]);
+    localStorage.removeItem("Shopping-cart");
+  };
+
   //   console.log(cart);
   return (
     <div className="shop-container">
@@ -28,8 +56,7 @@ const Shop = () => {
         ))}
       </div>
       <div className="cart-container">
-        <h1>add to cart</h1>
-        <h3>Selected Items: {cart.length}</h3>
+        <Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart}></Cart>
       </div>
     </div>
   );
